@@ -3,7 +3,7 @@ import Hdlogo from './hd-logo/hd-logo';
 
 
 const heading = new Heading();
-header.render();
+heading.render();
 
 const hdlogo = new Hdlogo();
 hdlogo.render();
