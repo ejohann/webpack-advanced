@@ -65,9 +65,18 @@ module.exports = {
             ]
         }),
         new HtmlWebpackPlugin({
+            filename: 'button.html',
+            chunks: ['button'],
             title: 'Hello World',
-            template: 'src/index.hbs',
-            description: 'Some description'
+            template: 'src/page-template.hbs',
+            description: 'Hello world'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'logo.html',
+            chunks: ['logo'],
+            title: 'HD Logo',
+            template: 'src/page-template.hbs',
+            description: 'HD Logo'
         })
     ]
 };
