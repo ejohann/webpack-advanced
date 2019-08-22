@@ -9,7 +9,7 @@ module.exports = {
         'logo' : './src/logo.js'
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, './dist'),
         publicPath: ''
     },
@@ -17,7 +17,6 @@ module.exports = {
     optimization: {
         splitChunks: {
             chunks: "all",
-            minSize: 100,
             automaticNameDelimiter: '_'
         }
     },
@@ -62,7 +61,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: '[name].[hash].css'
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
@@ -73,14 +72,14 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'button.html',
-            chunks: ['button', 'vendors~button~logo'],
+            chunks: ['button', 'vendors_button_logo'],
             title: 'Hello World',
             template: 'src/page-template.hbs',
             description: 'Hello world'
         }),
         new HtmlWebpackPlugin({
             filename: 'logo.html',
-            chunks: ['logo', 'vendors~button~logo'],
+            chunks: ['logo', 'vendors_button_logo'],
             title: 'HD Logo',
             template: 'src/page-template.hbs',
             description: 'HD Logo'

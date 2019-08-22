@@ -4,9 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        'button': './src/button.js',
+        'logo' : './src/logo.js'
+    },
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[hash].js',
         path: path.resolve(__dirname, './dist'),
         publicPath: ''
     },
@@ -57,7 +60,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'styles.css'
+            filename: '[name].[hash].css'
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: [
@@ -67,9 +70,18 @@ module.exports = {
             ]
         }),
         new HtmlWebpackPlugin({
+            filename: 'button.html',
+            chunks: ['button'],
             title: 'Hello World',
-            template: 'src/index.hbs',
-            description: 'Some description'
+            template: 'src/page-template.hbs',
+            description: 'Hello world'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'logo.html',
+            chunks: ['logo'],
+            title: 'HD Logo',
+            template: 'src/page-template.hbs',
+            description: 'HD Logo'
         })
     ]
 };
