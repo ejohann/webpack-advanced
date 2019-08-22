@@ -71,14 +71,14 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'button.html',
-            chunks: ['button'],
+            chunks: ['button', 'vendors~button~logo'],
             title: 'Hello World',
             template: 'src/page-template.hbs',
             description: 'Hello world'
         }),
         new HtmlWebpackPlugin({
             filename: 'logo.html',
-            chunks: ['logo'],
+            chunks: ['logo', 'vendors~button~logo'],
             title: 'HD Logo',
             template: 'src/page-template.hbs',
             description: 'HD Logo'
