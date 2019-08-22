@@ -1,4 +1,5 @@
 import Hd from './hd_logo.png';
+import './hd-logo.scss';
 
 class Hdlogo{
     render(){
