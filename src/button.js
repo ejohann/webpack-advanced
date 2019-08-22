@@ -1,11 +1,10 @@
 import HelloWorldButton from './components/hello-world-button/hello-world-button';
 import Heading from './components/heading/heading.js';
-import _ from 'lodash';
 
 const heading = new Heading();
 const helloWorldButton = new HelloWorldButton();
 
-heading.render(_.upperFirst('hello world'));
+heading.render('hello world');
 helloWorldButton.render();
 
 if(process.env.NODE_ENV === 'production'){
