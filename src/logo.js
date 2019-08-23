@@ -1,6 +1,6 @@
 import Heading from './components/heading/heading';
 import Hdlogo from './hd-logo/hd-logo';
-import React from 'react'
+import React from 'react';
 
 
 const heading = new Heading();
